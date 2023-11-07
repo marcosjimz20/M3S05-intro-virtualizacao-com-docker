@@ -1,0 +1,39 @@
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "root"
+    ports:
+     - "5432:5432"
+
+#services:
+#  backend:
+#    image: marcosjimz/aula1:latest
+#    restart: always
+#    ports:
+#      - 8080:8080
+#    environment:
+#      - POSTGRES_DB=example
+#    networks:
+#      - spring-postgres
+#  db:
+#    image: postgres
+#    restart: always
+#    secrets:
+#      - db-password
+#    volumes:
+#      - db-data:/var/lib/postgresql/data # C:var
+#    networks:
+#      - spring-postgres
+#    environment:
+#      - POSTGRES_DB=root
+#      - POSTGRES_PASSWORD=root
+#    expose:
+#      - 5432
+#volumes:
+#  db-data:
+#secrets:
+#  db-password:
+#    file: db/password.txt
+#networks:
+#  spring-postgres:
